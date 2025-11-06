@@ -1,0 +1,144 @@
+/* 🌎 Global layout */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #87ceeb, #fffde7);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* 🏞 Sky container */
+.sky {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    overflow: hidden;
+}
+
+/* ☀️ Sun style */
+.sun {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffeb3b 60%, #fbc02d 90%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #fff176, 0 0 60px #fff59d;
+    animation:
+        sunrise 25s ease-in-out infinite alternate,
+        spin 10s linear infinite,
+        shine 3s ease-in-out infinite alternate;
+}
+
+/* 🌅 Sunrise: east → top movement & light change */
+@keyframes sunrise {
+    0% {
+        transform: translate(0, 60px);
+        bottom: 10%;
+        right: 10%;
+        box-shadow: 0 0 10px #fbc02d, 0 0 20px #ffb300;
+        background: radial-gradient(circle, #ffd54f 60%, #f57f17 90%);
+        filter: brightness(0.9);
+    }
+    50% {
+        transform: translate(-40vw, -50px);
+        bottom: 40%;
+        right: 40%;
+        box-shadow: 0 0 40px #fff59d, 0 0 80px #fff9c4;
+        background: radial-gradient(circle, #fff176 60%, #ffeb3b 90%);
+        filter: brightness(1.1);
+    }
+    100% {
+        transform: translate(-80vw, -120px);
+        bottom: 55%;
+        right: 80%;
+        box-shadow: 0 0 60px #fff59d, 0 0 120px #fff9c4;
+        background: radial-gradient(circle, #fff9c4 60%, #ffee58 90%);
+        filter: brightness(1.3);
+    }
+}
+
+/* 🌞 Continuous spin for the sun */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ✨ Glow effect for the sun */
+@keyframes shine {
+    0% { box-shadow: 0 0 30px #fff59d, 0 0 60px #fff9c4; }
+    100% { box-shadow: 0 0 60px #fff59d, 0 0 120px #fff9c4; }
+}
+
+/* 🌤 Text container */
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* 🧡 Text */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* 🔘 Buttons container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ✅ YES button (green) */
+#yesBtn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+#yesBtn:hover {
+    background: #45A049;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+}
+
+/* ❌ NO button (red) */
+#noBtn {
+    background: #F44336;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+#noBtn:hover {
+    background: #D32F2F;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.7);
+}
+
+/* 💬 Output text */
+#output {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
