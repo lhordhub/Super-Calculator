@@ -4,4 +4,4 @@ a simple calculator for memes only
 
 ## Live Demo
 
-[View the project here](https://super-calculator-0.firebaseapp.com/)
+Click ➡️[here](https://super-calculator-0.firebaseapp.com/) to view the project.
